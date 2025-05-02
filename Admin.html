@@ -6,18 +6,20 @@
      <h1>Administrator Panel</h1>
 
      <h2>Current Items</h2>
-     <ul>
         {% for item in items %}
             <li>
           
                 <form action= method="post">
+                   {%for i in range (0, my listlen)%}
+                      <li>{{mylist[i]}}</li>
+                   {%enfor%}
                     <input type="text" name="Update">
                     <button type="submit">Update</button>
                 </form>
-                <button type="delete">Delete</button>
-            </li>
-        {% endfor %}
-    </ul>
+                   <button type="delete">Delete</button>
+                   </li>
+                  {% endfor %}
+    
 
     <h2>Add New Item</h2>
     <form action="/" method="post">
