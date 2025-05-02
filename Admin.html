@@ -1,0 +1,28 @@
+<html>
+   <head>
+    <title>Admin Dashboard</title>
+   </head>
+<body>
+     <h1>Administrator Panel</h1>
+
+     <h2>Current Items</h2>
+     <ul>
+        {% for item in items %}
+            <li>
+          
+                <form action= method="post">
+                    <input type="text" name="Update">
+                    <button type="submit">Update</button>
+                </form>
+                <button type="delete">Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add New Item</h2>
+    <form action="/" method="post">
+        <input type="text" name="Item">
+        <button type="add">Add</button>
+    </form>
+</body>
+</html>
