@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
-import sys
-
-msg = ("Welcome to the Book Selection!","Welcome to the Book Selection!")  
+import os.path
+from os import path
 
 def main():
     AskInfo();
@@ -20,30 +19,31 @@ def CheckInfo(optionwhich,pointcheck):
     global whichfilename;
     match(pointcheck):
         case"askinfo":
-           optwhich=ord(int(optionwhich));
-           if int(optwhich < 49 or optwhich > 53):
-              print("Incorrrect response.");
+           optwhich = ord(str(optionwhich));
+           if (int(optwhich)) < int(49) or int((optwhich) > int(53)):
+              print("Incorrrect response. Type 1 to 5");
               AskInfo();
            else:
-               match(optionwhich):
-                case "1":
-                    whichfilename = str(input(msg[0]));
-                case "2":
-                    whichfilename = str(input(msg[1]));
-                case "3":
-                    whichfilename = str(input(msg[0]));
-                case "4":
-                    whichfilename = str(input(msg[1]));
-                case "5":
-                    print("Thank you");
-                    sys.exit();
+               print("You have selected wise!");
 
-               whichfilename = whichfilename + ".doc";
-               
+            whichfilename = whichfilename + ".doc";
+            
+            FlieConnectivity();
         case default:
           print("We have a problem");
           sys.exit();
 
-    
+def FileConnectivity():
+    flieDir = os.path.dirname(os.path.realpath("__file__"));
+    fileexist = bool(path.exists(whichfilename));
+
+    if(fileexist == True):
+        adminfile = open(whichfilename,"r");
+    else:
+        adminfile = open(whichfilename,"x");
+
+    adminfile.close();
+
 if __name__ == "__main__":
     main();
+    
