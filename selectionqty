@@ -1,0 +1,6 @@
+<h2>Qty:</h2>
+		<select id="select2">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
