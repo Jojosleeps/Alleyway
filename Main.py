@@ -25,13 +25,14 @@ def CheckInfo(optionwhich,pointcheck):
               AskInfo();
            else:
                print("You have selected wise!");
-
-            whichfilename = whichfilename + ".doc";
-            
-            FlieConnectivity();
         case default:
-          print("We have a problem");
-          sys.exit();
+            print("We have a problem");
+
+    whichfilename = whichfilename + ".doc";
+    FlieConnectivity();
+
+        
+            
 
 def FileConnectivity():
     flieDir = os.path.dirname(os.path.realpath("__file__"));
