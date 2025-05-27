@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import os.path
 from os import path
 
+msg =["Welcome!","Error"]
 def main():
     AskInfo();
 
@@ -24,16 +25,18 @@ def CheckInfo(optionwhich,pointcheck):
               print("Incorrrect response. Type 1 to 5");
               AskInfo();
            else:
-               print("You have selected wise!");
+               if(optwhich == 1):
+                   whichfilename = str(input(msg[1]));
+                   print("You have selected wise!");
+               else:
+                   whichfilename = str(input(msg[0]));
         case default:
             print("We have a problem");
 
     whichfilename = whichfilename + ".doc";
-    FlieConnectivity();
+    FileConnectivity();
 
-        
-            
-
+    
 def FileConnectivity():
     flieDir = os.path.dirname(os.path.realpath("__file__"));
     fileexist = bool(path.exists(whichfilename));
