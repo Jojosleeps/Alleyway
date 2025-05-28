@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import os.path
 from os import path
 
-msg =["Welcome!","Error"]
+msg =["Welcome!","Bye Bye!"]
 def main():
     AskInfo();
 
@@ -51,3 +51,5 @@ def FileConnectivity():
 if __name__ == "__main__":
     main();
     
+
+
