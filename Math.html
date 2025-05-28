@@ -2,22 +2,13 @@
     <head>
     	<title>Math Books</title>
     </head>
+
      <body>
      	 <h1>Your Selections</h1>
-	  <table id="tbbook">
-	   	 <tr>
-		   <td><label id="Name of product"></label></td>
+	<form method="post">
+	  <label id="Name of product">Title: </label>
+          <input id="txtquantity"></input>
+	  <label id="Price">Price: </label>
 
-   		   <td><input id="txtquantity"></input></td>
-
-	   	</tr>
-		{% for row in data %}
-                <tr>
-		     {%for cell in row %}
-	   	     <td>{{cell}}</td>
-		     {% endfor %}
-           	</tr>
-		{% endfor %}
-	   </table>
     </body>
 </html>
