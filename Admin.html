@@ -6,25 +6,31 @@
      <h1>Administrator Panel</h1>
 
      <h2>Current Items</h2>
-        {% for item in items %}
+     <ul>
+        {% for item in cart %}
             <li>
-          
                 <form action= method="post">
-                   {%for i in range (0, my listlen)%}
-                      <li>{{mylist[i]}}</li>
-                   {%enfor%}
+		   
                     <input type="text" name="Update">
                     <button type="submit">Update</button>
                 </form>
-                   <button type="delete">Delete</button>
-                   </li>
-                  {% endfor %}
-    
+                <button type="delete">Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
 
     <h2>Add New Item</h2>
-    <form action="/" method="post">
-        <input type="text" name="Item">
-        <button type="add">Add</button>
-    </form>
+    <ul>
+        {% for item in cart %}
+            <li>
+    		<form action="/" method="post">
+        	<input type="text" name="Item">
+        	<button type="add">Add</button>
+		 </form>
+                	<button type="delate">Delete</button>
+
+	    </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

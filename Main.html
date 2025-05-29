@@ -5,21 +5,12 @@
     </head>
     
     <body>
-         <form method="post">
-	     <table id="tbinfo">
-	   	 <tr>
-		      {% for header in headings %}
-           	      <th>{{header}}</th>
-		      {% endfor %}
-	   	</tr>
-		{% for row in data %}
-                <tr>
-		     {%for cell in row %}
-	   	     <td>{{cell}}</td>
-		     {% endfor %}
-           	</tr>
-		{% endfor %}
-	   </table>
-	</form>
-     </body>
+        <h1>The Departments<h1>
+	<form method = "post">
+	<label id ="lblname">Select an option:</label>
+	<input id ="lblbooname">The Book Departments:</label>
+
+	<button type = "submit">Submit</button>
+	</form>	  
+    </body>
 </html>

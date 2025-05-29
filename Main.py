@@ -2,8 +2,18 @@ from flask import Flask, render_template, request, redirect, url_for
 import os.path
 from os import path
 
+app = Flask(__name__)
+
+@app.route("/", methods=["GET","POST"])
+def file():
+    if request.method == "GET":
+        return render_template("Main.html")
+    else:
+        main()
+    
+
 msg =["Welcome!","Bye Bye!"]
-def main():
+def main(): 
     AskInfo();
 
 def AskInfo():
@@ -50,6 +60,4 @@ def FileConnectivity():
 
 if __name__ == "__main__":
     main();
-    
-
-
+    app.run()
