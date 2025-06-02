@@ -1,0 +1,23 @@
+window.addEventListener("load",GetInfo);
+
+function GetInfo()
+{
+	firstname = localStorage.getItem("firstname");
+	lastname = localStorage.getItem("lastname");
+	fullname = firstname + " " + lastname;
+	document.getElementById("lblfullname").textcontent = fullname;
+	
+	phonenum = localStorage.getitem("phonenum");
+	document.getElementById("lblphonenum").textcontent = phonenum;
+	
+	address = localStorage.getItem("address");
+	document.getElementById("lbladdress").textcontent = address;
+	citynstate = localStorage.getItem("citynstate");
+	document.getElementById("lblcitynstate").textcontent = citynstate;
+	zipcode = localStorage.getItem("zipcode");
+	document.getElementById("lblzipcode").textcontent = zipcode;
+	
+	namecard = localStorage.getItem("namecard");
+	document.getElementById("lblnamecard").textcontent = namecard;
+	cardnum = localStorage.getItem("cardnum");
+}
