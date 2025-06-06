@@ -61,3 +61,69 @@ def FileConnectivity():
 if __name__ == "__main__":
     main();
     app.run()
+
+
+New verison
+
+from flask import Flask, render_template, request, redirect, url_for
+import os.path
+from os import path
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET","POST"])
+def file():
+    if request.method == "GET":
+        return render_template("Main.html")
+    else:
+        main()
+    
+
+msg =["Welcome!","Bye Bye!"]
+def main():
+     = request.form.get('')
+    AskInfo();
+
+def AskInfo():
+    CheckInfo();
+
+def CheckInfo():
+    match():
+        case"askinfo":
+           optwhich = ord(str(optwhich));
+           if (int(optwhich)) < int(49) and int((optwhich) > int(52)):
+               AskInfo();
+           else:   
+                if(optwhich == 1):
+                    whichfilename = str(input(msg[1]));
+                    print("You have selected wise!");
+                else:
+                    whichfilename = str(input(msg[0]));
+        case default:
+            print("We have a problem");
+
+    whichfilename = whichfilename + ".doc";
+    FileConnectivity();
+
+    
+def FileConnectivity():
+    flieDir = os.path.dirname(os.path.realpath("__file__"));
+    fileexist = bool(path.exists(whichfilename));
+
+    if(fileexist == True):
+        adminfile = open(whichfilename,"r");
+    else:
+        adminfile = open(whichfilename,"x");
+
+    adminfile.close();
+
+if __name__ == "__main__":
+    main();
+    app.run()
+
+
+
+
+
+
+
